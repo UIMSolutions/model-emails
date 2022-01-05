@@ -1,0 +1,2 @@
+module models.emails.classes;
+
