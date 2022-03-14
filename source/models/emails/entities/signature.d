@@ -4,7 +4,7 @@ module models.emails.signature;
 import models.emails;
 
 // Signature for email message
-class DAPLEmailSignature : DOOPEntity {
+class DEMLSignature : DOOPEntity {
   this() { super();
     this.attributes([
       "owningBusinessUnitId": OOPAttributeLink("aplBusinessUnit").descriptions(["en":"Unique identifier of the business unit that owns the email signature."]),
@@ -31,8 +31,8 @@ class DAPLEmailSignature : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailSignature"; }
-  override string entityClasses() { return "aplEmailSignatures"; }
+  override string entityClass() { return "EMLSignature"; }
+  override string entityClasses() { return "EMLSignatures"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -43,14 +43,14 @@ class DAPLEmailSignature : DOOPEntity {
   this(Json aJson) { 
     this(); this.fromJson(aJson); }
 }
-auto APLEmailSignature() { return new DAPLEmailSignature; } 
-auto APLEmailSignature(Json json) { return new DAPLEmailSignature(json); } 
+auto EMLSignature() { return new DEMLSignature; } 
+auto EMLSignature(Json json) { return new DEMLSignature(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailSignature);
+    assert(EMLSignature);
   
-  auto entity = APLEmailSignature;
+  auto entity = EMLSignature;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

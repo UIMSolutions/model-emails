@@ -3,7 +3,7 @@ module models.emails.hard_bounced;
 @safe:
 import models.emails;
 
-class DAPLEmailHardBounced : DOOPEntity {
+class DEMLHardBounced : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -23,8 +23,8 @@ class DAPLEmailHardBounced : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailHardBounced"; }
-  override string entityClasses() { return "aplEmailHardBounceds"; }
+  override string entityClass() { return "EMLHardBounced"; }
+  override string entityClasses() { return "EMLHardBounceds"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -40,14 +40,14 @@ class DAPLEmailHardBounced : DOOPEntity {
   // mixin(GetEntity!("contact", "contactId", "APLContact"));
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 }
-auto APLEmailHardBounced() { return new DAPLEmailHardBounced; } 
-auto APLEmailHardBounced(Json json) { return new DAPLEmailHardBounced(json); } 
+auto EMLHardBounced() { return new DEMLHardBounced; } 
+auto EMLHardBounced(Json json) { return new DEMLHardBounced(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailHardBounced);
+    assert(EMLHardBounced);
   
-  auto entity = APLEmailHardBounced;
+  auto entity = EMLHardBounced;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

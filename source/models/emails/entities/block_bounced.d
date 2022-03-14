@@ -3,51 +3,38 @@ module models.emails.block_bounced;
 @safe:
 import models.emails;
 
-class DAPLEmailBlockBounced : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "bounceCategory": OOPAttributeString.descriptions(["en":"Bounce category"]),
-      "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
-    ]);
+class DEMLBlockBounced : DOOPEntity {
+  mixin(OOPEntityThis!("EMLBlockBounced"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
+        "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
+        "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
+        "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
+        "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
+        "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
+        "bounceCategory": OOPAttributeString.descriptions(["en":"Bounce category"]),
+        "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
+      ])
+      .registerPath("apl_positions");
   }
-
-  override string entityClass() { return "aplEmailBlockBounced"; }
-  override string entityClasses() { return "aplEmailBlockBounceds"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("activity", "activityId", "APLActivity"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
-
 }
-auto APLEmailBlockBounced() { return new DAPLEmailBlockBounced; } 
-auto APLEmailBlockBounced(Json json) { return new DAPLEmailBlockBounced(json); } 
+mixin(OOPEntityCalls!("EMLBlockBounced"));
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailBlockBounced);
+    assert(EMLBlockBounced);
   
-  auto entity = APLEmailBlockBounced;
+  auto entity = EMLBlockBounced;
   
 /*   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);

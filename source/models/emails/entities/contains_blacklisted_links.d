@@ -3,7 +3,7 @@ module models.emails.contains_blacklisted_links;
 @safe:
 import models.emails;
 
-class DAPLEmailContainsBlacklistedLinks : DOOPEntity {
+class DEMLContainsBlacklistedLinks : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -22,8 +22,8 @@ class DAPLEmailContainsBlacklistedLinks : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailContainsBlacklistedLinks"; }
-  override string entityClasses() { return "aplEmailContainsBlacklistedLinkss"; }
+  override string entityClass() { return "EMLContainsBlacklistedLinks"; }
+  override string entityClasses() { return "EMLContainsBlacklistedLinkss"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -39,14 +39,14 @@ class DAPLEmailContainsBlacklistedLinks : DOOPEntity {
   // mixin(GetEntity!("contact", "contactId", "APLContact"));
 
 }
-auto APLEmailContainsBlacklistedLinks() { return new DAPLEmailContainsBlacklistedLinks; } 
-auto APLEmailContainsBlacklistedLinks(Json json) { return new DAPLEmailContainsBlacklistedLinks(json); } 
+auto EMLContainsBlacklistedLinks() { return new DEMLContainsBlacklistedLinks; } 
+auto EMLContainsBlacklistedLinks(Json json) { return new DEMLContainsBlacklistedLinks(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailContainsBlacklistedLinks);
+    assert(EMLContainsBlacklistedLinks);
   
-  auto entity = APLEmailContainsBlacklistedLinks;
+  auto entity = EMLContainsBlacklistedLinks;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

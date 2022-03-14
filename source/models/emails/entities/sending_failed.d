@@ -3,7 +3,7 @@ module models.emails.sending_failed;
 @safe:
 import models.emails;
 
-class DAPLEmailSendingFailed : DOOPEntity {
+class DEMLSendingFailed : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -20,8 +20,8 @@ class DAPLEmailSendingFailed : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailSendingFailed"; }
-  override string entityClasses() { return "aplEmailSendingFaileds"; }
+  override string entityClass() { return "EMLSendingFailed"; }
+  override string entityClasses() { return "EMLSendingFaileds"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -37,13 +37,13 @@ class DAPLEmailSendingFailed : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailSendingFailed() { return new DAPLEmailSendingFailed; } 
-auto APLEmailSendingFailed(Json json) { return new DAPLEmailSendingFailed(json); } 
+auto EMLSendingFailed() { return new DEMLSendingFailed; } 
+auto EMLSendingFailed(Json json) { return new DEMLSendingFailed(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailSendingFailed);
-  auto entity = APLEmailSendingFailed;
+    assert(EMLSendingFailed);
+  auto entity = EMLSendingFailed;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

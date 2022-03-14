@@ -3,7 +3,7 @@ module models.emails.soft_bounced;
 @safe:
 import models.emails;
 
-class DAPLEmailSoftBounced: DOOPEntity {
+class DEMLSoftBounced: DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -23,8 +23,8 @@ class DAPLEmailSoftBounced: DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailSoftBounced"; }
-  override string entityClasses() { return "aplEmailSoftBounceds"; }
+  override string entityClass() { return "EMLSoftBounced"; }
+  override string entityClasses() { return "EMLSoftBounceds"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -41,14 +41,14 @@ class DAPLEmailSoftBounced: DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailSoftBounced() { return new DAPLEmailSoftBounced; } 
-auto APLEmailSoftBounced(Json json) { return new DAPLEmailSoftBounced(json); } 
+auto EMLSoftBounced() { return new DEMLSoftBounced; } 
+auto EMLSoftBounced(Json json) { return new DEMLSoftBounced(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailSoftBounced);
+    assert(EMLSoftBounced);
   
-  auto entity = APLEmailSoftBounced;
+  auto entity = EMLSoftBounced;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

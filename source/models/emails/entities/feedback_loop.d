@@ -3,7 +3,7 @@ module models.emails.feedback_loop;
 @safe:
 import models.emails;
 
-class DAPLEmailFeedbackLoop : DOOPEntity {
+class DEMLFeedbackLoop : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeString.descriptions(["en":"Unique identifier of the interaction."]),
@@ -20,8 +20,8 @@ class DAPLEmailFeedbackLoop : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailFeedbackLoop"; }
-  override string entityClasses() { return "aplEmailFeedbackLoops"; }
+  override string entityClass() { return "EMLFeedbackLoop"; }
+  override string entityClasses() { return "EMLFeedbackLoops"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -37,14 +37,14 @@ class DAPLEmailFeedbackLoop : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailFeedbackLoop() { return new DAPLEmailFeedbackLoop; } 
-auto APLEmailFeedbackLoop(Json json) { return new DAPLEmailFeedbackLoop(json); } 
+auto EMLFeedbackLoop() { return new DEMLFeedbackLoop; } 
+auto EMLFeedbackLoop(Json json) { return new DEMLFeedbackLoop(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailFeedbackLoop);
+    assert(EMLFeedbackLoop);
   
-  auto entity = APLEmailFeedbackLoop;
+  auto entity = EMLFeedbackLoop;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

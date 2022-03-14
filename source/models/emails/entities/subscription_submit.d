@@ -3,7 +3,7 @@ module models.emails.subscription_submit;
 @safe:
 import models.emails;
 
-class DAPLEmailSubscriptionSubmit : DOOPEntity {
+class DEMLSubscriptionSubmit : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -31,8 +31,8 @@ class DAPLEmailSubscriptionSubmit : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailSubscriptionSubmit"; }
-  override string entityClasses() { return "aplEmailSubscriptionSubmits"; }
+  override string entityClass() { return "EMLSubscriptionSubmit"; }
+  override string entityClasses() { return "EMLSubscriptionSubmits"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -48,14 +48,14 @@ class DAPLEmailSubscriptionSubmit : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailSubscriptionSubmit() { return new DAPLEmailSubscriptionSubmit; } 
-auto APLEmailSubscriptionSubmit(Json json) { return new DAPLEmailSubscriptionSubmit(json); } 
+auto EMLSubscriptionSubmit() { return new DEMLSubscriptionSubmit; } 
+auto EMLSubscriptionSubmit(Json json) { return new DEMLSubscriptionSubmit(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailSubscriptionSubmit);
+    assert(EMLSubscriptionSubmit);
   
-  auto entity = APLEmailSubscriptionSubmit;
+  auto entity = EMLSubscriptionSubmit;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

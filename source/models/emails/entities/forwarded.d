@@ -3,7 +3,7 @@ module models.emails.forwarded;
 @safe:
 import models.emails;
 
-class DAPLEmailForwarded : DOOPEntity {
+class DEMLForwarded : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -40,8 +40,8 @@ class DAPLEmailForwarded : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailForwarded"; }
-  override string entityClasses() { return "aplEmailForwardeds"; }
+  override string entityClass() { return "EMLForwarded"; }
+  override string entityClasses() { return "EMLForwardeds"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -57,14 +57,14 @@ class DAPLEmailForwarded : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailForwarded() { return new DAPLEmailForwarded; } 
-auto APLEmailForwarded(Json json) { return new DAPLEmailForwarded(json); } 
+auto EMLForwarded() { return new DEMLForwarded; } 
+auto EMLForwarded(Json json) { return new DEMLForwarded(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailForwarded);
+    assert(EMLForwarded);
   
-  auto entity = APLEmailForwarded;
+  auto entity = EMLForwarded;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

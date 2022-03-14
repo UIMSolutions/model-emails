@@ -3,7 +3,7 @@ module models.emails.sent;
 @safe:
 import models.emails;
 
-class DAPLEmailSent : DOOPEntity {
+class DEMLSent : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -23,8 +23,8 @@ class DAPLEmailSent : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailSent"; }
-  override string entityClasses() { return "aplEmailSents"; }
+  override string entityClass() { return "EMLSent"; }
+  override string entityClasses() { return "EMLSents"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -41,14 +41,14 @@ class DAPLEmailSent : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailSent() { return new DAPLEmailSent; } 
-auto APLEmailSent(Json json) { return new DAPLEmailSent(json); } 
+auto EMLSent() { return new DEMLSent; } 
+auto EMLSent(Json json) { return new DEMLSent(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailSent);
+    assert(EMLSent);
   
-  auto entity = APLEmailSent;
+  auto entity = EMLSent;
   // auto repository = OOPFileRepository("./tests");
 /* /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

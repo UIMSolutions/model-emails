@@ -31,8 +31,12 @@
 			"name": "offline"
 		},
 		{
-			"name": "model_emails",
-			"versions": ["model_emails"]
+			"name": "test",
+			"versions": ["test_model_emails"]
+		},
+		{
+			"name": "js",
+			"versions": ["createjs_model_emails"]
 		}
 	]
 }

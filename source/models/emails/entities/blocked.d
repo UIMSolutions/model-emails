@@ -3,7 +3,7 @@ module models.emails.blocked;
 @safe:
 import models.emails;
 
-class DAPLEmailBlocked : DOOPEntity {
+class DEMLBlocked : DOOPEntity {
   this() { super();
     this.attributes([
       "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
@@ -22,8 +22,8 @@ class DAPLEmailBlocked : DOOPEntity {
     ]);
   }
 
-  override string entityClass() { return "aplEmailBlocked"; }
-  override string entityClasses() { return "aplEmailBlockeds"; }
+  override string entityClass() { return "EMLBlocked"; }
+  override string entityClasses() { return "EMLBlockeds"; }
 
   this(UUID myId) { 
     this(); this.id(myId); }
@@ -40,14 +40,14 @@ class DAPLEmailBlocked : DOOPEntity {
   // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 
 }
-auto APLEmailBlocked() { return new DAPLEmailBlocked; } 
-auto APLEmailBlocked(Json json) { return new DAPLEmailBlocked(json); } 
+auto EMLBlocked() { return new DEMLBlocked; } 
+auto EMLBlocked(Json json) { return new DEMLBlocked(json); } 
 
 unittest {
   version(uim_entities) {
-    assert(APLEmailBlocked);
+    assert(EMLBlocked);
   
-  auto entity = APLEmailBlocked;
+  auto entity = EMLBlocked;
   
 /*   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
