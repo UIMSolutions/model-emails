@@ -1,64 +1,51 @@
-module models.emails.clicked;
+module models.emails.entities.clicked;
 
 @safe:
 import models.emails;
 
 class DEMLClicked : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "linkId": OOPAttributeUUID.descriptions(["en":"Link ID"]),
-      "linkFriendlyName": OOPAttributeString.descriptions(["en":"Link friendly name"]),
-      "originalLink": OOPAttributeString.descriptions(["en":"Original link"]),
-      "originalUrl": OOPAttributeUrl.descriptions(["en":"Original URL"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "emailDomain": OOPAttributeString.descriptions(["en":"Email domain"]),
-      "emailAddressUsed": OOPAttributeString.descriptions(["en":"Email address used"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "visitorId": OOPAttributeUUID.descriptions(["en":"Visitor ID"]),
-      "sessionId": OOPAttributeUUID.descriptions(["en":"Session ID"]),
-      "countryIsoCode": OOPAttributeInteger.descriptions(["en":"Country ISO code"]),
-      "state": OOPAttributeString.descriptions(["en":"State"]),
-      "city": OOPAttributeString.descriptions(["en":"City"]),
-      "postalCode": OOPAttributeInteger.descriptions(["en":"Postal code"]),
-      "browserId": OOPAttributeUUID.descriptions(["en":"Browser ID"]),
-      "browserVersion": OOPAttributeString.descriptions(["en":"Browser version"]),
-      "operatingSystemId": OOPAttributeUUID.descriptions(["en":"Operating system ID"]),
-      "operatingSystemVersion": OOPAttributeString.descriptions(["en":"Operating system version"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
-      "visitorAnonymousStatus": OOPAttributeString.descriptions(["en":"Visitor anonymous status"]),
-      "leadId": OOPAttributeUUID.descriptions(["en":"Lead ID"]),
-    ]);
+  mixin(OOPEntityThis!("EMLClicked"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "linkId": OOPUUIDAttribute.descriptions(["en":"Link ID"]),
+        "linkFriendlyName": OOPStringAttribute.descriptions(["en":"Link friendly name"]),
+        "originalLink": OOPStringAttribute.descriptions(["en":"Original link"]),
+        "originalUrl": OOPUrlAttribute.descriptions(["en":"Original URL"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "emailDomain": OOPStringAttribute.descriptions(["en":"Email domain"]),
+        "emailAddressUsed": OOPStringAttribute.descriptions(["en":"Email address used"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "visitorId": OOPUUIDAttribute.descriptions(["en":"Visitor ID"]),
+        "sessionId": OOPUUIDAttribute.descriptions(["en":"Session ID"]),
+        "countryIsoCode": OOPIntegerAttribute.descriptions(["en":"Country ISO code"]),
+        "state": OOPStringAttribute.descriptions(["en":"State"]),
+        "city": OOPStringAttribute.descriptions(["en":"City"]),
+        "postalCode": OOPIntegerAttribute.descriptions(["en":"Postal code"]),
+        "browserId": OOPUUIDAttribute.descriptions(["en":"Browser ID"]),
+        "browserVersion": OOPStringAttribute.descriptions(["en":"Browser version"]),
+        "operatingSystemId": OOPUUIDAttribute.descriptions(["en":"Operating system ID"]),
+        "operatingSystemVersion": OOPStringAttribute.descriptions(["en":"Operating system version"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "visitorAnonymousStatus": OOPStringAttribute.descriptions(["en":"Visitor anonymous status"]),
+        "leadId": OOPUUIDAttribute.descriptions(["en":"Lead ID"]),
+      ])
+      .registerPath("email_clicked");
   }
-
-  override string entityClass() { return "EMLClicked"; }
-  override string entityClasses() { return "EMLClickeds"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("activity", "activityId", "APLActivity"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
-
 }
-auto EMLClicked() { return new DEMLClicked; } 
-auto EMLClicked(Json json) { return new DEMLClicked(json); } 
+mixin(OOPEntityCalls!("EMLClicked"));
 
 unittest {
   version(uim_entities) {

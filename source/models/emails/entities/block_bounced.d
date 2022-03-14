@@ -1,4 +1,4 @@
-module models.emails.block_bounced;
+module models.emails.entities.block_bounced;
 
 @safe:
 import models.emails;
@@ -11,19 +11,19 @@ class DEMLBlockBounced : DOOPEntity {
 
     this
       .addAttributes([
-        "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-        "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-        "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-        "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-        "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-        "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-        "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-        "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-        "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-        "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-        "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-        "bounceCategory": OOPAttributeString.descriptions(["en":"Bounce category"]),
-        "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "bounceCategory": OOPStringAttribute.descriptions(["en":"Bounce category"]),
+        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("apl_positions");
   }

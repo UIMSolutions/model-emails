@@ -1,47 +1,34 @@
-module models.emails.blocked;
+module models.emails.entities.blocked;
 
 @safe:
 import models.emails;
 
 class DEMLBlocked : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "blockedReason": OOPAttributeString.descriptions(["en":"Blocked reason"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
-    ]);
+  mixin(OOPEntityThis!("EMLBlocked"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "blockedReason": OOPStringAttribute.descriptions(["en":"Blocked reason"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+      ])
+      .registerPath("email_blocked");
   }
-
-  override string entityClass() { return "EMLBlocked"; }
-  override string entityClasses() { return "EMLBlockeds"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("activity", "activityId", "APLActivity"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
-
 }
-auto EMLBlocked() { return new DEMLBlocked; } 
-auto EMLBlocked(Json json) { return new DEMLBlocked(json); } 
+mixin(OOPEntityCalls!("EMLBlocked"));
 
 unittest {
   version(uim_entities) {

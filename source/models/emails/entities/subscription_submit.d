@@ -1,55 +1,43 @@
-module models.emails.subscription_submit;
+module models.emails.entities.subscription_submit;
 
 @safe:
 import models.emails;
 
 class DEMLSubscriptionSubmit : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "countryIsoCode": OOPAttributeInteger.descriptions(["en":"Country ISO code"]),
-      "state": OOPAttributeString.descriptions(["en":"State"]),
-      "city": OOPAttributeString.descriptions(["en":"City"]),
-      "postalCode": OOPAttributeInteger.descriptions(["en":"Postal code"]),
-      "browserId": OOPAttributeUUID.descriptions(["en":"Browser ID"]),
-      "browserVersion": OOPAttributeString.descriptions(["en":"Browser version"]),
-      "operatingSystemId": OOPAttributeUUID.descriptions(["en":"Operating system ID"]),
-      "operatingSystemVersion": OOPAttributeString.descriptions(["en":"Operating system version"]),
-      "deviceType": OOPAttributeString.descriptions(["en":"Device type"]),
-      "deviceBrand": OOPAttributeString.descriptions(["en":"Device brand"]),
-      "deviceModel": OOPAttributeString.descriptions(["en":"Device model"]),
-    ]);
+  mixin(OOPEntityThis!("EMLSubscriptionSubmit"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "countryIsoCode": OOPIntegerAttribute.descriptions(["en":"Country ISO code"]),
+        "state": OOPStringAttribute.descriptions(["en":"State"]),
+        "city": OOPStringAttribute.descriptions(["en":"City"]),
+        "postalCode": OOPIntegerAttribute.descriptions(["en":"Postal code"]),
+        "browserId": OOPUUIDAttribute.descriptions(["en":"Browser ID"]),
+        "browserVersion": OOPStringAttribute.descriptions(["en":"Browser version"]),
+        "operatingSystemId": OOPUUIDAttribute.descriptions(["en":"Operating system ID"]),
+        "operatingSystemVersion": OOPStringAttribute.descriptions(["en":"Operating system version"]),
+        "deviceType": OOPStringAttribute.descriptions(["en":"Device type"]),
+        "deviceBrand": OOPStringAttribute.descriptions(["en":"Device brand"]),
+        "deviceModel": OOPStringAttribute.descriptions(["en":"Device model"]),
+      ])
+      .registerPath("email_subscriptionsubmits");
   }
-
-  override string entityClass() { return "EMLSubscriptionSubmit"; }
-  override string entityClasses() { return "EMLSubscriptionSubmits"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
-
 }
-auto EMLSubscriptionSubmit() { return new DEMLSubscriptionSubmit; } 
-auto EMLSubscriptionSubmit(Json json) { return new DEMLSubscriptionSubmit(json); } 
+mixin(OOPEntityCalls!("EMLSubscriptionSubmit"));
 
 unittest {
   version(uim_entities) {

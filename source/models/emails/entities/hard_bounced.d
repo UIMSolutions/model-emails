@@ -1,47 +1,35 @@
-module models.emails.hard_bounced;
+module models.emails.entities.hard_bounced;
 
 @safe:
 import models.emails;
 
 class DEMLHardBounced : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "bounceCategory": OOPAttributeString.descriptions(["en":"Bounce category"]),
-      "remoteBounce": OOPAttributeString.descriptions(["en":"Remote bounce"]),
-      "activityId": OOPAttributeLink("aplActivity").descriptions(["en":"Activity ID"]),
-    ]);
+  mixin(OOPEntityThis!("EMLHardBounced"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "bounceCategory": OOPStringAttribute.descriptions(["en":"Bounce category"]),
+        "remoteBounce": OOPStringAttribute.descriptions(["en":"Remote bounce"]),
+        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+      ])
+      .registerPath("email_hardbounced");
   }
-
-  override string entityClass() { return "EMLHardBounced"; }
-  override string entityClasses() { return "EMLHardBounceds"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("activity", "activityId", "APLActivity"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
 }
-auto EMLHardBounced() { return new DEMLHardBounced; } 
-auto EMLHardBounced(Json json) { return new DEMLHardBounced(json); } 
+mixin(OOPEntityCalls!("EMLHardBounced"));
 
 unittest {
   version(uim_entities) {

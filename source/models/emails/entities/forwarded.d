@@ -1,64 +1,52 @@
-module models.emails.forwarded;
+module models.emails.entities.forwarded;
 
 @safe:
 import models.emails;
 
 class DEMLForwarded : DOOPEntity {
-  this() { super();
-    this.attributes([
-      "interactionId": OOPAttributeUUID.descriptions(["en":"Unique identifier of the interaction."]),
-      "messageId": OOPAttributeUUID.descriptions(["en":"Message ID"]),
-      "customerJourneyId": OOPAttributeUUID.descriptions(["en":"Customer Journey ID"]),
-      "contactId": OOPAttributeLink("aplContact").descriptions(["en":"Contact ID"]),
-      "accountId": OOPAttributeLink("aplAccount").descriptions(["en":"Account ID"]),
-      "sendingId": OOPAttributeUUID.descriptions(["en":"Sending ID"]),
-      "emailDomain": OOPAttributeString.descriptions(["en":"Email domain"]),
-      "emailAddressUsed": OOPAttributeString.descriptions(["en":"Email address used"]),
-      "customerJourneyIterationId": OOPAttributeUUID.descriptions(["en":"Customer journey iteration ID"]),
-      "usageType": OOPAttributeString.descriptions(["en":"Usage type"]),
-      "secondaryRecipientProfileId": OOPAttributeUUID.descriptions(["en":"Secondary recipient profile ID"]),
-      "interactionType": OOPAttributeString.descriptions(["en":"Interaction type"]),
-      "organizationId": OOPAttributeLink("aplOrganization").descriptions(["en":"Organization ID"]),
-      "timestamp": OOPAttributeString.descriptions(["en":"Timestamp"]),
-      "visitorId": OOPAttributeUUID.descriptions(["en":"Visitor ID"]),
-      "sessionId": OOPAttributeUUID.descriptions(["en":"Session ID"]),
-      "countryIsoCode": OOPAttributeInteger.descriptions(["en":"Country ISO code"]),
-      "state": OOPAttributeString.descriptions(["en":"State"]),
-      "city": OOPAttributeString.descriptions(["en":"City"]),
-      "postalCode": OOPAttributeInteger.descriptions(["en":"Postal code"]),
-      "browserId": OOPAttributeUUID.descriptions(["en":"Browser ID"]),
-      "browserVersion": OOPAttributeString.descriptions(["en":"Browser version"]),
-      "operatingSystemId": OOPAttributeUUID.descriptions(["en":"Operating system ID"]),
-      "operatingSystemVersion": OOPAttributeString.descriptions(["en":"Operating system version"]),
-      "searchPhrase": OOPAttributeString.descriptions(["en":"Search phrase"]),
-      "searchEngineName": OOPAttributeString.descriptions(["en":"Search engine name"]),
-      "visitorReturningStatus": OOPAttributeString.descriptions(["en":"Visitor returning status"]),
-      "visitDuration": OOPAttributeString.descriptions(["en":"Visit duration"]),
-      "formSubmissionId": OOPAttributeUUID.descriptions(["en":"Form submission ID"]),
-      "visitorAnonymousStatus": OOPAttributeString.descriptions(["en":"Visitor anonymous status"]),
-      "leadId": OOPAttributeUUID.descriptions(["en":"Lead ID"]),
-    ]);
+  mixin(OOPEntityThis!("EMLForwarded"));
+  
+  override void initialize() {
+    super.initialize;
+
+    this
+      .addAttributes([
+        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
+        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
+        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
+        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
+        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
+        "emailDomain": OOPStringAttribute.descriptions(["en":"Email domain"]),
+        "emailAddressUsed": OOPStringAttribute.descriptions(["en":"Email address used"]),
+        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
+        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
+        "secondaryRecipientProfileId": OOPUUIDAttribute.descriptions(["en":"Secondary recipient profile ID"]),
+        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
+        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "visitorId": OOPUUIDAttribute.descriptions(["en":"Visitor ID"]),
+        "sessionId": OOPUUIDAttribute.descriptions(["en":"Session ID"]),
+        "countryIsoCode": OOPIntegerAttribute.descriptions(["en":"Country ISO code"]),
+        "state": OOPStringAttribute.descriptions(["en":"State"]),
+        "city": OOPStringAttribute.descriptions(["en":"City"]),
+        "postalCode": OOPIntegerAttribute.descriptions(["en":"Postal code"]),
+        "browserId": OOPUUIDAttribute.descriptions(["en":"Browser ID"]),
+        "browserVersion": OOPStringAttribute.descriptions(["en":"Browser version"]),
+        "operatingSystemId": OOPUUIDAttribute.descriptions(["en":"Operating system ID"]),
+        "operatingSystemVersion": OOPStringAttribute.descriptions(["en":"Operating system version"]),
+        "searchPhrase": OOPStringAttribute.descriptions(["en":"Search phrase"]),
+        "searchEngineName": OOPStringAttribute.descriptions(["en":"Search engine name"]),
+        "visitorReturningStatus": OOPStringAttribute.descriptions(["en":"Visitor returning status"]),
+        "visitDuration": OOPStringAttribute.descriptions(["en":"Visit duration"]),
+        "formSubmissionId": OOPUUIDAttribute.descriptions(["en":"Form submission ID"]),
+        "visitorAnonymousStatus": OOPStringAttribute.descriptions(["en":"Visitor anonymous status"]),
+        "leadId": OOPUUIDAttribute.descriptions(["en":"Lead ID"]),
+      ])
+      .registerPath("email_forwarded");
   }
-
-  override string entityClass() { return "EMLForwarded"; }
-  override string entityClasses() { return "EMLForwardeds"; }
-
-  this(UUID myId) { 
-    this(); this.id(myId); }
-  this(string myName) { 
-    this(); this.name(myName); }
-  this(UUID myId, string myName) { 
-    this(); this.id(myId).name(myName); }
-  this(Json aJson) { 
-    this(); this.fromJson(aJson); }
-
-  // mixin(GetEntity!("account", "accountId", "APLAccount"));
-  // mixin(GetEntity!("contact", "contactId", "APLContact"));
-  // mixin(GetEntity!("organization", "organizationId", "APLOrganization"));
-
 }
-auto EMLForwarded() { return new DEMLForwarded; } 
-auto EMLForwarded(Json json) { return new DEMLForwarded(json); } 
+mixin(OOPEntityCalls!("EMLForwarded"));
 
 unittest {
   version(uim_entities) {
