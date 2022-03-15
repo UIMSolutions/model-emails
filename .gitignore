@@ -13,3 +13,4 @@ model-emails-test-*
 *.o
 *.obj
 *.lst
+dub.selections.json
