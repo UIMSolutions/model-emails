@@ -4,7 +4,7 @@ module models.emails.entities.block_bounced;
 import models.emails;
 
 class DEMLBlockBounced : DOOPEntity {
-  mixin(OOPEntityThis!("EMLBlockBounced"));
+  mixin(EntityThis!("EMLBlockBounced"));
   
   override void initialize() {
     super.initialize;
@@ -28,7 +28,7 @@ class DEMLBlockBounced : DOOPEntity {
       .registerPath("apl_positions");
   }
 }
-mixin(OOPEntityCalls!("EMLBlockBounced"));
+mixin(EntityCalls!("EMLBlockBounced"));
 
 unittest {
   version(uim_entities) {

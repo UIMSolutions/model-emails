@@ -4,7 +4,7 @@ module models.emails.entities.contains_blacklisted_links;
 import models.emails;
 
 class DEMLContainsBlacklistedLinks : DOOPEntity {
-  mixin(OOPEntityThis!("EMLContainsBlacklistedLinks"));
+  mixin(EntityThis!("EMLContainsBlacklistedLinks"));
   
   override void initialize() {
     super.initialize;
@@ -28,7 +28,7 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
       .registerPath("email_containsblacklistedlinks");
   }
 }
-mixin(OOPEntityCalls!("EMLContainsBlacklistedLinks"));
+mixin(EntityCalls!("EMLContainsBlacklistedLinks"));
 
 unittest {
   version(uim_entities) {

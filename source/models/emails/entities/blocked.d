@@ -4,7 +4,7 @@ module models.emails.entities.blocked;
 import models.emails;
 
 class DEMLBlocked : DOOPEntity {
-  mixin(OOPEntityThis!("EMLBlocked"));
+  mixin(EntityThis!("EMLBlocked"));
   
   override void initialize() {
     super.initialize;
@@ -28,7 +28,7 @@ class DEMLBlocked : DOOPEntity {
       .registerPath("email_blocked");
   }
 }
-mixin(OOPEntityCalls!("EMLBlocked"));
+mixin(EntityCalls!("EMLBlocked"));
 
 unittest {
   version(uim_entities) {

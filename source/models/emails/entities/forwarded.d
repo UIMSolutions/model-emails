@@ -4,7 +4,7 @@ module models.emails.entities.forwarded;
 import models.emails;
 
 class DEMLForwarded : DOOPEntity {
-  mixin(OOPEntityThis!("EMLForwarded"));
+  mixin(EntityThis!("EMLForwarded"));
   
   override void initialize() {
     super.initialize;
@@ -46,7 +46,7 @@ class DEMLForwarded : DOOPEntity {
       .registerPath("email_forwarded");
   }
 }
-mixin(OOPEntityCalls!("EMLForwarded"));
+mixin(EntityCalls!("EMLForwarded"));
 
 unittest {
   version(uim_entities) {

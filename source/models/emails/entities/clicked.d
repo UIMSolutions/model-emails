@@ -4,7 +4,7 @@ module models.emails.entities.clicked;
 import models.emails;
 
 class DEMLClicked : DOOPEntity {
-  mixin(OOPEntityThis!("EMLClicked"));
+  mixin(EntityThis!("EMLClicked"));
   
   override void initialize() {
     super.initialize;
@@ -45,7 +45,7 @@ class DEMLClicked : DOOPEntity {
       .registerPath("email_clicked");
   }
 }
-mixin(OOPEntityCalls!("EMLClicked"));
+mixin(EntityCalls!("EMLClicked"));
 
 unittest {
   version(uim_entities) {

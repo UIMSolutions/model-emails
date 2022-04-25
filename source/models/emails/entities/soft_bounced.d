@@ -4,7 +4,7 @@ module models.emails.entities.soft_bounced;
 import models.emails;
 
 class DEMLSoftBounced: DOOPEntity {
-  mixin(OOPEntityThis!("EMLSoftBounced"));
+  mixin(EntityThis!("EMLSoftBounced"));
   
   override void initialize() {
     super.initialize;
@@ -29,7 +29,7 @@ class DEMLSoftBounced: DOOPEntity {
       .registerPath("email_softbounced");
   }
 }
-mixin(OOPEntityCalls!("EMLSoftBounced"));
+mixin(EntityCalls!("EMLSoftBounced"));
 
 unittest {
   version(uim_entities) {

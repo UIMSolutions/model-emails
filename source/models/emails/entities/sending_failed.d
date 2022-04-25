@@ -4,7 +4,7 @@ module models.emails.entities.sending_failed;
 import models.emails;
 
 class DEMLSendingFailed : DOOPEntity {
-  mixin(OOPEntityThis!("EMLSendingFailed"));
+  mixin(EntityThis!("EMLSendingFailed"));
   
   override void initialize() {
     super.initialize;
@@ -26,7 +26,7 @@ class DEMLSendingFailed : DOOPEntity {
       .registerPath("email_sendingfailed");
   }
 }
-mixin(OOPEntityCalls!("EMLSendingFailed"));
+mixin(EntityCalls!("EMLSendingFailed"));
 
 unittest {
   version(uim_entities) {

@@ -4,7 +4,7 @@ module models.emails.entities.feedback_loop;
 import models.emails;
 
 class DEMLFeedbackLoop : DOOPEntity {
-  mixin(OOPEntityThis!("EMLFeedbackLoop"));
+  mixin(EntityThis!("EMLFeedbackLoop"));
   
   override void initialize() {
     super.initialize;
@@ -26,7 +26,7 @@ class DEMLFeedbackLoop : DOOPEntity {
       .registerPath("email_feedbackloops");
   }
 }
-mixin(OOPEntityCalls!("EMLFeedbackLoop"));
+mixin(EntityCalls!("EMLFeedbackLoop"));
 
 unittest {
   version(uim_entities) {

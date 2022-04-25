@@ -4,7 +4,7 @@ module models.emails.entities.subscription_submit;
 import models.emails;
 
 class DEMLSubscriptionSubmit : DOOPEntity {
-  mixin(OOPEntityThis!("EMLSubscriptionSubmit"));
+  mixin(EntityThis!("EMLSubscriptionSubmit"));
   
   override void initialize() {
     super.initialize;
@@ -37,7 +37,7 @@ class DEMLSubscriptionSubmit : DOOPEntity {
       .registerPath("email_subscriptionsubmits");
   }
 }
-mixin(OOPEntityCalls!("EMLSubscriptionSubmit"));
+mixin(EntityCalls!("EMLSubscriptionSubmit"));
 
 unittest {
   version(uim_entities) {

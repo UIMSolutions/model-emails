@@ -5,7 +5,7 @@ import models.emails;
 
 // Group of undeleted system users and undeleted teams. Emails can be used to control access to specific objects.
 class DEMLEmail : DOOPEntity {
-  mixin(OOPEntityThis!("EMLEmail"));
+  mixin(EntityThis!("EMLEmail"));
   
   override void initialize() {
     super.initialize;
@@ -113,7 +113,7 @@ class DEMLEmail : DOOPEntity {
       .registerPath("email_emails");
   }
 }
-mixin(OOPEntityCalls!("EMLEmail"));
+mixin(EntityCalls!("EMLEmail"));
 
 unittest {
   version(uim_entities) {

@@ -4,7 +4,7 @@ module models.emails.entities.opened;
 import models.emails;
 
 class DEMLOpened : DOOPEntity {
-  mixin(OOPEntityThis!("EMLOpened"));
+  mixin(EntityThis!("EMLOpened"));
   
   override void initialize() {
     super.initialize;
@@ -42,7 +42,7 @@ class DEMLOpened : DOOPEntity {
       .registerPath("email_opened");
   }
 }
-mixin(OOPEntityCalls!("EMLOpened"));
+mixin(EntityCalls!("EMLOpened"));
 
 unittest {
   version(uim_entities) {

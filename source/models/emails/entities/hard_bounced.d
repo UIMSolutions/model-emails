@@ -4,7 +4,7 @@ module models.emails.entities.hard_bounced;
 import models.emails;
 
 class DEMLHardBounced : DOOPEntity {
-  mixin(OOPEntityThis!("EMLHardBounced"));
+  mixin(EntityThis!("EMLHardBounced"));
   
   override void initialize() {
     super.initialize;
@@ -29,7 +29,7 @@ class DEMLHardBounced : DOOPEntity {
       .registerPath("email_hardbounced");
   }
 }
-mixin(OOPEntityCalls!("EMLHardBounced"));
+mixin(EntityCalls!("EMLHardBounced"));
 
 unittest {
   version(uim_entities) {

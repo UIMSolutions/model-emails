@@ -5,7 +5,7 @@ import models.emails;
 
 // Signature for email message
 class DEMLSignature : DOOPEntity {
-  mixin(OOPEntityThis!("EMLSignature"));
+  mixin(EntityThis!("EMLSignature"));
   
   override void initialize() {
     super.initialize;
@@ -37,7 +37,7 @@ class DEMLSignature : DOOPEntity {
       .registerPath("email_signatures");
   }
 }
-mixin(OOPEntityCalls!("EMLSignature"));
+mixin(EntityCalls!("EMLSignature"));
 
 unittest {
   version(uim_entities) {

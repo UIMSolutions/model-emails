@@ -4,7 +4,7 @@ module models.emails.entities.sent;
 import models.emails;
 
 class DEMLSent : DOOPEntity {
-  mixin(OOPEntityThis!("EMLSent"));
+  mixin(EntityThis!("EMLSent"));
   
   override void initialize() {
     super.initialize;
@@ -29,7 +29,7 @@ class DEMLSent : DOOPEntity {
       .registerPath("email_sents");
   }
 }
-mixin(OOPEntityCalls!("EMLSent"));
+mixin(EntityCalls!("EMLSent"));
 
 unittest {
   version(uim_entities) {
