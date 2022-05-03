@@ -10,7 +10,7 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
     super.initialize;
 
     this
-      .addAttributes([
+      .addValues([
         "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
         "contactId": OOPUUIDAttribute.descriptions(["en":"Contact ID"]),
         "accountId": OOPUUIDAttribute.descriptions(["en":"Account ID"]),

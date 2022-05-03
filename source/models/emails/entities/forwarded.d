@@ -10,7 +10,7 @@ class DEMLForwarded : DOOPEntity {
     super.initialize;
 
     this
-      .addAttributes([
+      .addValues([
         "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
         "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
         "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),

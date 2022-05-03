@@ -10,7 +10,7 @@ class DEMLSendingFailed : DOOPEntity {
     super.initialize;
 
     this
-      .addAttributes([
+      .addValues([
         "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
         "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
         "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),

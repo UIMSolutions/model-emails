@@ -10,7 +10,7 @@ class DEMLFeedbackLoop : DOOPEntity {
     super.initialize;
 
     this
-      .addAttributes([
+      .addValues([
         "interactionId": OOPStringAttribute.descriptions(["en":"Unique identifier of the interaction."]),
         "contactId": OOPStringAttribute.descriptions(["en":"Contact ID"]),
         "accountId": OOPStringAttribute.descriptions(["en":"Account ID"]),
