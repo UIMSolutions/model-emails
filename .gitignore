@@ -1,16 +1,24 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+
+# DUB
 .dub
 docs.json
 __dummy.html
 docs/
-/model-emails
-model-emails.so
-model-emails.dylib
-model-emails.dll
-model-emails.a
-model-emails.lib
-model-emails-test-*
-*.exe
-*.o
-*.obj
+
+# Code coverage
 *.lst
-dub.selections.json
