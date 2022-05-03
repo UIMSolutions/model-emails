@@ -11,19 +11,19 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
 
     this
       .addValues([
-        "interactionId": OOPUUIDAttribute.descriptions(["en":"Unique identifier of the interaction."]),
-        "contactId": OOPUUIDAttribute.descriptions(["en":"Contact ID"]),
-        "accountId": OOPUUIDAttribute.descriptions(["en":"Account ID"]),
-        "messageId": OOPUUIDAttribute.descriptions(["en":"Message ID"]),
-        "customerJourneyId": OOPUUIDAttribute.descriptions(["en":"Customer Journey ID"]),
-        "organizationId": OOPUUIDAttribute.descriptions(["en":"Organization ID"]),
-        "sendingId": OOPUUIDAttribute.descriptions(["en":"Sending ID"]),
-        "blacklistedLink": OOPStringAttribute.descriptions(["en":"Blacklisted link"]),
-        "customerJourneyIterationId": OOPUUIDAttribute.descriptions(["en":"Customer journey iteration ID"]),
-        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
-        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
-        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
-        "activityId": OOPUUIDAttribute.descriptions(["en":"Activity ID"]),
+        "interactionId": UUIDAttributeClass, // Unique identifier of the interaction."]),
+        "contactId": UUIDAttributeClass, // Contact ID"]),
+        "accountId": UUIDAttributeClass, // Account ID"]),
+        "messageId": UUIDAttributeClass, // Message ID"]),
+        "customerJourneyId": UUIDAttributeClass, // Customer Journey ID"]),
+        "organizationId": UUIDAttributeClass, // Organization ID"]),
+        "sendingId": UUIDAttributeClass, // Sending ID"]),
+        "blacklistedLink": StringAttributeClass, // Blacklisted link"]),
+        "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
+        "usageType": StringAttributeClass, // Usage type"]),
+        "interactionType": StringAttributeClass, // Interaction type"]),
+        "timestamp": StringAttributeClass, // Timestamp"]),
+        "activityId": UUIDAttributeClass, // Activity ID"]),
       ])
       .registerPath("email_containsblacklistedlinks");
   }

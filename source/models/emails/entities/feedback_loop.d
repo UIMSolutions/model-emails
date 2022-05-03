@@ -11,17 +11,17 @@ class DEMLFeedbackLoop : DOOPEntity {
 
     this
       .addValues([
-        "interactionId": OOPStringAttribute.descriptions(["en":"Unique identifier of the interaction."]),
-        "contactId": OOPStringAttribute.descriptions(["en":"Contact ID"]),
-        "accountId": OOPStringAttribute.descriptions(["en":"Account ID"]),
-        "messageId": OOPStringAttribute.descriptions(["en":"Message ID"]),
-        "customerJourneyId": OOPStringAttribute.descriptions(["en":"Customer Journey ID"]),
-        "organizationId": OOPStringAttribute.descriptions(["en":"Organization ID"]),
-        "sendingId": OOPStringAttribute.descriptions(["en":"Sending ID"]),
-        "customerJourneyIterationId": OOPStringAttribute.descriptions(["en":"Customer journey iteration ID"]),
-        "usageType": OOPStringAttribute.descriptions(["en":"Usage type"]),
-        "interactionType": OOPStringAttribute.descriptions(["en":"Interaction type"]),
-        "timestamp": OOPStringAttribute.descriptions(["en":"Timestamp"]),
+        "interactionId": StringAttributeClass, // Unique identifier of the interaction."]),
+        "contactId": StringAttributeClass, // Contact ID"]),
+        "accountId": StringAttributeClass, // Account ID"]),
+        "messageId": StringAttributeClass, // Message ID"]),
+        "customerJourneyId": StringAttributeClass, // Customer Journey ID"]),
+        "organizationId": StringAttributeClass, // Organization ID"]),
+        "sendingId": StringAttributeClass, // Sending ID"]),
+        "customerJourneyIterationId": StringAttributeClass, // Customer journey iteration ID"]),
+        "usageType": StringAttributeClass, // Usage type"]),
+        "interactionType": StringAttributeClass, // Interaction type"]),
+        "timestamp": StringAttributeClass, // Timestamp"]),
       ])
       .registerPath("email_feedbackloops");
   }
