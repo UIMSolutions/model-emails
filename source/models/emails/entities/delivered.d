@@ -29,8 +29,9 @@ class DEMLDelivered : DOOPEntity {
 }
 mixin(EntityCalls!("EMLDelivered"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLDelivered);
   
   auto entity = EMLDelivered;

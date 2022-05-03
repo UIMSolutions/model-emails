@@ -115,8 +115,9 @@ class DEMLEmail : DOOPEntity {
 }
 mixin(EntityCalls!("EMLEmail"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EML);
   
   auto entity = EML;

@@ -31,8 +31,9 @@ class DEMLHardBounced : DOOPEntity {
 }
 mixin(EntityCalls!("EMLHardBounced"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLHardBounced);
   
   auto entity = EMLHardBounced;

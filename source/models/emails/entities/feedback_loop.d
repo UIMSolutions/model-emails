@@ -28,8 +28,9 @@ class DEMLFeedbackLoop : DOOPEntity {
 }
 mixin(EntityCalls!("EMLFeedbackLoop"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLFeedbackLoop);
   
   auto entity = EMLFeedbackLoop;

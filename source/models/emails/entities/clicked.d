@@ -47,8 +47,9 @@ class DEMLClicked : DOOPEntity {
 }
 mixin(EntityCalls!("EMLClicked"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLClicked);
   
   auto entity = EMLClicked;

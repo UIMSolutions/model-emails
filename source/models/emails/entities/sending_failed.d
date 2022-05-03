@@ -28,8 +28,9 @@ class DEMLSendingFailed : DOOPEntity {
 }
 mixin(EntityCalls!("EMLSendingFailed"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLSendingFailed);
   auto entity = EMLSendingFailed;
   // auto repository = OOPFileRepository("./tests");

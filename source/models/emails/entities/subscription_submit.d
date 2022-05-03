@@ -39,8 +39,9 @@ class DEMLSubscriptionSubmit : DOOPEntity {
 }
 mixin(EntityCalls!("EMLSubscriptionSubmit"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLSubscriptionSubmit);
   
   auto entity = EMLSubscriptionSubmit;

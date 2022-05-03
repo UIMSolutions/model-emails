@@ -30,8 +30,9 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
 }
 mixin(EntityCalls!("EMLContainsBlacklistedLinks"));
 
-unittest {
-  version(uim_entities) {
+version(test_library) {
+  unittest {
+    assert(APLFeedback);
     assert(EMLContainsBlacklistedLinks);
   
   auto entity = EMLContainsBlacklistedLinks;
