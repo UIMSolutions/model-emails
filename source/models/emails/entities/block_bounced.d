@@ -12,11 +12,11 @@ class DEMLBlockBounced : DOOPEntity {
     this
       .addValues([
         "interactionId": UUIDAttributeClass, // Unique identifier of the interaction."]),
-        "contactId": OOPLinkAttribute("aplContact").descriptions(["en":"Contact ID"]),
-        "accountId": OOPLinkAttribute("aplAccount").descriptions(["en":"Account ID"]),
+        "contactId": UUIDAttributeClass, // Contact ID"]),
+        "accountId": UUIDAttributeClass, // Account ID"]),
         "messageId": UUIDAttributeClass, // Message ID"]),
         "customerJourneyId": UUIDAttributeClass, // Customer Journey ID"]),
-        "organizationId": OOPLinkAttribute("aplOrganization").descriptions(["en":"Organization ID"]),
+        "organizationId": UUIDAttributeClass, // Organization ID"]),
         "sendingId": UUIDAttributeClass, // Sending ID"]),
         "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
         "usageType": StringAttributeClass, // Usage type"]),
