@@ -23,7 +23,7 @@ class DEMLBlocked : DOOPEntity {
         "timestamp": StringAttributeClass, // Timestamp"]),
         "blockedReason": StringAttributeClass, // Blocked reason"]),
         "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("email_blocked");
   }

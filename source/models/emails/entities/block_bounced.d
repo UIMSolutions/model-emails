@@ -23,7 +23,7 @@ class DEMLBlockBounced : DOOPEntity {
         "interactionType": StringAttributeClass, // Interaction type"]),
         "timestamp": StringAttributeClass, // Timestamp"]),
         "bounceCategory": StringAttributeClass, // Bounce category"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("apl_positions");
   }

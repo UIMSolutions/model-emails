@@ -35,7 +35,7 @@ class DEMLOpened : DOOPEntity {
         "browserVersion": StringAttributeClass, // Browser version"]),
         "operatingSystemId": UUIDAttributeClass, // Operating system ID"]),
         "operatingSystemVersion": StringAttributeClass, // Operating system version"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
         "visitorAnonymousStatus": StringAttributeClass, // Visitor anonymous status"]),
         "leadId": UUIDAttributeClass, // Lead ID"]),
       ])

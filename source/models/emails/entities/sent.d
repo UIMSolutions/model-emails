@@ -24,7 +24,7 @@ class DEMLSent : DOOPEntity {
         "emailAddressUsed": StringAttributeClass, // Email address used"]),
         "emailDomain": StringAttributeClass, // Email domain"]),
         "timestamp": StringAttributeClass, // Timestamp"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("email_sents");
   }

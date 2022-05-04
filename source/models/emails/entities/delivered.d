@@ -22,7 +22,7 @@ class DEMLDelivered : DOOPEntity {
         "usageType": StringAttributeClass, // Usage type"]),
         "interactionType": StringAttributeClass, // Interaction type"]),
         "timestamp": StringAttributeClass, // Timestamp"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("email_delivered");
   }

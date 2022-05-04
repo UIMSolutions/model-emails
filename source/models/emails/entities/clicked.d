@@ -19,7 +19,7 @@ class DEMLClicked : DOOPEntity {
         "linkId": UUIDAttributeClass, // Link ID"]),
         "linkFriendlyName": StringAttributeClass, // Link friendly name"]),
         "originalLink": StringAttributeClass, // Original link"]),
-        "originalUrl": OOPUrlAttribute.descriptions(["en":"Original URL"]),
+        "originalUrl": UrlAttributeClass, // Original URL"]),
         "sendingId": UUIDAttributeClass, // Sending ID"]),
         "emailDomain": StringAttributeClass, // Email domain"]),
         "emailAddressUsed": StringAttributeClass, // Email address used"]),
@@ -38,7 +38,7 @@ class DEMLClicked : DOOPEntity {
         "operatingSystemVersion": StringAttributeClass, // Operating system version"]),
         "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
         "usageType": StringAttributeClass, // Usage type"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
         "visitorAnonymousStatus": StringAttributeClass, // Visitor anonymous status"]),
         "leadId": UUIDAttributeClass, // Lead ID"]),
       ])

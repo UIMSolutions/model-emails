@@ -24,7 +24,7 @@ class DEMLHardBounced : DOOPEntity {
         "timestamp": StringAttributeClass, // Timestamp"]),
         "bounceCategory": StringAttributeClass, // Bounce category"]),
         "remoteBounce": StringAttributeClass, // Remote bounce"]),
-        "activityId": OOPLinkAttribute("aplActivity").descriptions(["en":"Activity ID"]),
+        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("email_hardbounced");
   }
