@@ -11,39 +11,39 @@ class DEmailForwardedENtity : DOOPEntity {
 
     this
       .addValues([
-        ContactIdAttributeClass, // Contact ID
-        AccountIdAttributeClass, // Account ID
-        OrganizationIdAttributeClass, // Organization ID
+        ContactIdAttribute, // Contact ID
+        AccountIdAttribute, // Account ID
+        OrganizationIdAttribute, // Organization ID
       ])
       .addValues([
-        "interactionId": UUIDAttributeClass, // Unique identifier of the interaction.
-        "messageId": UUIDAttributeClass, // Message ID
-        "customerJourneyId": UUIDAttributeClass, // Customer Journey ID
-        "sendingId": UUIDAttributeClass, // Sending ID
-        "emailDomain": StringAttributeClass, // Email domain
-        "emailAddressUsed": StringAttributeClass, // Email address used
-        "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID
-        "usageType": StringAttributeClass, // Usage type
-        "secondaryRecipientProfileId": UUIDAttributeClass, // Secondary recipient profile ID
-        "interactionType": StringAttributeClass, // Interaction type
-        "timestamp": StringAttributeClass, // Timestamp
-        "visitorId": UUIDAttributeClass, // Visitor ID
-        "sessionId": UUIDAttributeClass, // Session ID
-        "countryIsoCode": IntegerAttributeClass, //Country ISO code
-        "state": StringAttributeClass, // State
-        "city": StringAttributeClass, // City
-        "postalCode": IntegerAttributeClass, //Postal code
-        "browserId": UUIDAttributeClass, // Browser ID
-        "browserVersion": StringAttributeClass, // Browser version
-        "operatingSystemId": UUIDAttributeClass, // Operating system ID
-        "operatingSystemVersion": StringAttributeClass, // Operating system version
-        "searchPhrase": StringAttributeClass, // Search phrase
-        "searchEngineName": StringAttributeClass, // Search engine name
-        "visitorReturningStatus": StringAttributeClass, // Visitor returning status
-        "visitDuration": StringAttributeClass, // Visit duration
-        "formSubmissionId": UUIDAttributeClass, // Form submission ID
-        "visitorAnonymousStatus": StringAttributeClass, // Visitor anonymous status
-        "leadId": UUIDAttributeClass, // Lead ID
+        "interactionId": UUIDAttribute, // Unique identifier of the interaction.
+        "messageId": UUIDAttribute, // Message ID
+        "customerJourneyId": UUIDAttribute, // Customer Journey ID
+        "sendingId": UUIDAttribute, // Sending ID
+        "emailDomain": StringAttribute, // Email domain
+        "emailAddressUsed": StringAttribute, // Email address used
+        "customerJourneyIterationId": UUIDAttribute, // Customer journey iteration ID
+        "usageType": StringAttribute, // Usage type
+        "secondaryRecipientProfileId": UUIDAttribute, // Secondary recipient profile ID
+        "interactionType": StringAttribute, // Interaction type
+        "timestamp": StringAttribute, // Timestamp
+        "visitorId": UUIDAttribute, // Visitor ID
+        "sessionId": UUIDAttribute, // Session ID
+        "countryIsoCode": IntegerAttribute, //Country ISO code
+        "state": StringAttribute, // State
+        "city": StringAttribute, // City
+        "postalCode": IntegerAttribute, //Postal code
+        "browserId": UUIDAttribute, // Browser ID
+        "browserVersion": StringAttribute, // Browser version
+        "operatingSystemId": UUIDAttribute, // Operating system ID
+        "operatingSystemVersion": StringAttribute, // Operating system version
+        "searchPhrase": StringAttribute, // Search phrase
+        "searchEngineName": StringAttribute, // Search engine name
+        "visitorReturningStatus": StringAttribute, // Visitor returning status
+        "visitDuration": StringAttribute, // Visit duration
+        "formSubmissionId": UUIDAttribute, // Form submission ID
+        "visitorAnonymousStatus": StringAttribute, // Visitor anonymous status
+        "leadId": UUIDAttribute, // Lead ID
       ])
       .registerPath("email_forwarded");
   }

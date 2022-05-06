@@ -11,17 +11,17 @@ class DEMLFeedbackLoop : DOOPEntity {
 
     this
       .addValues([
-        "interactionId": StringAttributeClass, // Unique identifier of the interaction."]),
-        "contactId": StringAttributeClass, // Contact ID"]),
-        "accountId": StringAttributeClass, // Account ID"]),
-        "messageId": StringAttributeClass, // Message ID"]),
-        "customerJourneyId": StringAttributeClass, // Customer Journey ID"]),
-        "organizationId": StringAttributeClass, // Organization ID"]),
-        "sendingId": StringAttributeClass, // Sending ID"]),
-        "customerJourneyIterationId": StringAttributeClass, // Customer journey iteration ID"]),
-        "usageType": StringAttributeClass, // Usage type"]),
-        "interactionType": StringAttributeClass, // Interaction type"]),
-        "timestamp": StringAttributeClass, // Timestamp"]),
+        "interactionId": StringAttribute, // Unique identifier of the interaction."]),
+        "contactId": StringAttribute, // Contact ID"]),
+        "accountId": StringAttribute, // Account ID"]),
+        "messageId": StringAttribute, // Message ID"]),
+        "customerJourneyId": StringAttribute, // Customer Journey ID"]),
+        "organizationId": StringAttribute, // Organization ID"]),
+        "sendingId": StringAttribute, // Sending ID"]),
+        "customerJourneyIterationId": StringAttribute, // Customer journey iteration ID"]),
+        "usageType": StringAttribute, // Usage type"]),
+        "interactionType": StringAttribute, // Interaction type"]),
+        "timestamp": StringAttribute, // Timestamp"]),
       ])
       .registerPath("email_feedbackloops");
   }

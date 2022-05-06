@@ -11,20 +11,20 @@ class DEMLSent : DOOPEntity {
 
     this
       .addValues([
-        "interactionId": UUIDAttributeClass, // Unique identifier of the interaction."]),
-        "contactId": UUIDAttributeClass, // Contact ID"]),
-        "accountId": UUIDAttributeClass, // Account ID"]),
-        "messageId": UUIDAttributeClass, // Message ID"]),
-        "customerJourneyId": UUIDAttributeClass, // Customer Journey ID"]),
-        "organizationId": UUIDAttributeClass, // Organization ID"]),
-        "sendingId": UUIDAttributeClass, // Sending ID"]),
-        "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
-        "usageType": StringAttributeClass, // Usage type"]),
-        "interactionType": StringAttributeClass, // Interaction type"]),
-        "emailAddressUsed": StringAttributeClass, // Email address used"]),
-        "emailDomain": StringAttributeClass, // Email domain"]),
-        "timestamp": StringAttributeClass, // Timestamp"]),
-        "activityId": UUIDAttributeClass, // aplActivity").descriptions(["en":"Activity ID"]),
+        "interactionId": UUIDAttribute, // Unique identifier of the interaction."]),
+        "contactId": UUIDAttribute, // Contact ID"]),
+        "accountId": UUIDAttribute, // Account ID"]),
+        "messageId": UUIDAttribute, // Message ID"]),
+        "customerJourneyId": UUIDAttribute, // Customer Journey ID"]),
+        "organizationId": UUIDAttribute, // Organization ID"]),
+        "sendingId": UUIDAttribute, // Sending ID"]),
+        "customerJourneyIterationId": UUIDAttribute, // Customer journey iteration ID"]),
+        "usageType": StringAttribute, // Usage type"]),
+        "interactionType": StringAttribute, // Interaction type"]),
+        "emailAddressUsed": StringAttribute, // Email address used"]),
+        "emailDomain": StringAttribute, // Email domain"]),
+        "timestamp": StringAttribute, // Timestamp"]),
+        "activityId": UUIDAttribute, // aplActivity").descriptions(["en":"Activity ID"]),
       ])
       .registerPath("email_sents");
   }

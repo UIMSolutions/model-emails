@@ -11,19 +11,19 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
 
     this
       .addValues([
-        "interactionId": UUIDAttributeClass, // Unique identifier of the interaction."]),
-        "contactId": UUIDAttributeClass, // Contact ID"]),
-        "accountId": UUIDAttributeClass, // Account ID"]),
-        "messageId": UUIDAttributeClass, // Message ID"]),
-        "customerJourneyId": UUIDAttributeClass, // Customer Journey ID"]),
-        "organizationId": UUIDAttributeClass, // Organization ID"]),
-        "sendingId": UUIDAttributeClass, // Sending ID"]),
-        "blacklistedLink": StringAttributeClass, // Blacklisted link"]),
-        "customerJourneyIterationId": UUIDAttributeClass, // Customer journey iteration ID"]),
-        "usageType": StringAttributeClass, // Usage type"]),
-        "interactionType": StringAttributeClass, // Interaction type"]),
-        "timestamp": StringAttributeClass, // Timestamp"]),
-        "activityId": UUIDAttributeClass, // Activity ID"]),
+        "interactionId": UUIDAttribute, // Unique identifier of the interaction."]),
+        "contactId": UUIDAttribute, // Contact ID"]),
+        "accountId": UUIDAttribute, // Account ID"]),
+        "messageId": UUIDAttribute, // Message ID"]),
+        "customerJourneyId": UUIDAttribute, // Customer Journey ID"]),
+        "organizationId": UUIDAttribute, // Organization ID"]),
+        "sendingId": UUIDAttribute, // Sending ID"]),
+        "blacklistedLink": StringAttribute, // Blacklisted link"]),
+        "customerJourneyIterationId": UUIDAttribute, // Customer journey iteration ID"]),
+        "usageType": StringAttribute, // Usage type"]),
+        "interactionType": StringAttribute, // Interaction type"]),
+        "timestamp": StringAttribute, // Timestamp"]),
+        "activityId": UUIDAttribute, // Activity ID"]),
       ])
       .registerPath("email_containsblacklistedlinks");
   }
