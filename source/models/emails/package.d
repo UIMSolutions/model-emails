@@ -15,5 +15,6 @@ public import uim.oop;
 public import uim.entities;
 
 // model-emails packages
+public import models.emails.attributes;
 public import models.emails.classes;
 public import models.emails.entities;
