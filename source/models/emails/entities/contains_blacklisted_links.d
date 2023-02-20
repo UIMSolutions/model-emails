@@ -6,7 +6,7 @@ import models.emails;
 class DEMLContainsBlacklistedLinks : DOOPEntity {
   mixin(EntityThis!("EMLContainsBlacklistedLinks"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this

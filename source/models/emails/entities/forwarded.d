@@ -6,7 +6,7 @@ import models.emails;
 class DEmailForwardedENtity : DOOPEntity {
   mixin(EntityThis!("EmailForwardedENtity"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this

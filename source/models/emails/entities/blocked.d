@@ -6,7 +6,7 @@ import models.emails;
 class DEMLBlocked : DOOPEntity {
   mixin(EntityThis!("EMLBlocked"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this

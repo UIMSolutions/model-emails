@@ -6,7 +6,7 @@ import models.emails;
 class DEMLFeedbackLoop : DOOPEntity {
   mixin(EntityThis!("EMLFeedbackLoop"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this
