@@ -7,7 +7,7 @@ class DEmailForwardedENtity : DOOPEntity {
   mixin(EntityThis!("EmailForwardedENtity"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

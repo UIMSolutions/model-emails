@@ -8,7 +8,7 @@ class DEMLEmail : DOOPEntity {
   mixin(EntityThis!("EMLEmail"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

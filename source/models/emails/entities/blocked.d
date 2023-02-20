@@ -7,7 +7,7 @@ class DEMLBlocked : DOOPEntity {
   mixin(EntityThis!("EMLBlocked"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

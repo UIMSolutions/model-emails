@@ -7,18 +7,18 @@ class DEMLFeedbackLoop : DOOPEntity {
   mixin(EntityThis!("EMLFeedbackLoop"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([
-        "interactionId": StringAttribute, // Unique identifier of the interaction."]),
-        "contactId": StringAttribute, // Contact ID"]),
-        "accountId": StringAttribute, // Account ID"]),
-        "messageId": StringAttribute, // Message ID"]),
-        "customerJourneyId": StringAttribute, // Customer Journey ID"]),
-        "organizationId": StringAttribute, // Organization ID"]),
-        "sendingId": StringAttribute, // Sending ID"]),
-        "customerJourneyIterationId": StringAttribute, // Customer journey iteration ID"]),
+        "interactionId": UUIDAttribute, // Unique identifier of the interaction."]),
+        "contactId": UUIDAttribute, // Contact ID"]),
+        "accountId": UUIDAttribute, // Account ID"]),
+        "messageId": UUIDAttribute, // Message ID"]),
+        "customerJourneyId": UUIDAttribute, // Customer Journey ID"]),
+        "organizationId": UUIDAttribute, // Organization ID"]),
+        "sendingId": UUIDAttribute, // Sending ID"]),
+        "customerJourneyIterationId": UUIDAttribute, // Customer journey iteration ID"]),
         "usageType": StringAttribute, // Usage type"]),
         "interactionType": StringAttribute, // Interaction type"]),
         "timestamp": StringAttribute, // Timestamp"]),

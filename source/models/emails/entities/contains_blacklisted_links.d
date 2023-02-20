@@ -7,7 +7,7 @@ class DEMLContainsBlacklistedLinks : DOOPEntity {
   mixin(EntityThis!("EMLContainsBlacklistedLinks"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

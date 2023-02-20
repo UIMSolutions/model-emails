@@ -7,7 +7,7 @@ class DEMLBlockBounced : DOOPEntity {
   mixin(EntityThis!("EMLBlockBounced"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([
