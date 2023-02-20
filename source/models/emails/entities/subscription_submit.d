@@ -7,7 +7,7 @@ class DEMLSubscriptionSubmit : DOOPEntity {
   mixin(EntityThis!("EMLSubscriptionSubmit"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

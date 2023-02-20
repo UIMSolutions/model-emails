@@ -7,7 +7,7 @@ class DEMLSoftBounced: DOOPEntity {
   mixin(EntityThis!("EMLSoftBounced"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

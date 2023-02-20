@@ -7,7 +7,7 @@ class DEMLSent : DOOPEntity {
   mixin(EntityThis!("EMLSent"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

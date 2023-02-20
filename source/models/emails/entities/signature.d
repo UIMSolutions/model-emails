@@ -8,7 +8,7 @@ class DEMLSignature : DOOPEntity {
   mixin(EntityThis!("EMLSignature"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([

@@ -7,7 +7,7 @@ class DEMLOpened : DOOPEntity {
   mixin(EntityThis!("EMLOpened"));
   
   override void initialize() {
-    super.initialize;
+    super.initialize(configSettings);
 
     this
       .addValues([
