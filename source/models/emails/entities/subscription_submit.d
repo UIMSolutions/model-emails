@@ -6,7 +6,7 @@ import models.emails;
 class DEMLSubscriptionSubmit : DOOPEntity {
   mixin(EntityThis!("EMLSubscriptionSubmit"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this

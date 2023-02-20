@@ -6,7 +6,7 @@ import models.emails;
 class DEMLOpened : DOOPEntity {
   mixin(EntityThis!("EMLOpened"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this

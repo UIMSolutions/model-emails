@@ -6,7 +6,7 @@ import models.emails;
 class DEMLSoftBounced: DOOPEntity {
   mixin(EntityThis!("EMLSoftBounced"));
   
-  override void initialize() {
+  override void initialize(DConfigurationValue configSettings = null) {
     super.initialize(configSettings);
 
     this
