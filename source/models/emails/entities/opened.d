@@ -3,7 +3,7 @@ module models.emails.entities.opened;
 @safe:
 import models.emails;
 
-class DEMLOpened : DOOPEntity {
+class DEMLOpened : DEntity {
   mixin(EntityThis!("EMLOpened"));
   
   override void initialize(DConfigurationValue configSettings = null) {

@@ -3,7 +3,7 @@ module models.emails.entities.soft_bounced;
 @safe:
 import models.emails;
 
-class DEMLSoftBounced: DOOPEntity {
+class DEMLSoftBounced: DEntity {
   mixin(EntityThis!("EMLSoftBounced"));
   
   override void initialize(DConfigurationValue configSettings = null) {

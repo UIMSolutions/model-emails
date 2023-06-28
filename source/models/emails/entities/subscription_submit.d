@@ -3,7 +3,7 @@ module models.emails.entities.subscription_submit;
 @safe:
 import models.emails;
 
-class DEMLSubscriptionSubmit : DOOPEntity {
+class DEMLSubscriptionSubmit : DEntity {
   mixin(EntityThis!("EMLSubscriptionSubmit"));
   
   override void initialize(DConfigurationValue configSettings = null) {

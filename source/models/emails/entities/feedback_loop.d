@@ -3,7 +3,7 @@ module models.emails.entities.feedback_loop;
 @safe:
 import models.emails;
 
-class DEMLFeedbackLoop : DOOPEntity {
+class DEMLFeedbackLoop : DEntity {
   mixin(EntityThis!("EMLFeedbackLoop"));
   
   override void initialize(DConfigurationValue configSettings = null) {

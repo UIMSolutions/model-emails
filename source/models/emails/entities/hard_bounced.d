@@ -3,7 +3,7 @@ module models.emails.entities.hard_bounced;
 @safe:
 import models.emails;
 
-class DEMLHardBounced : DOOPEntity {
+class DEMLHardBounced : DEntity {
   mixin(EntityThis!("EMLHardBounced"));
   
   override void initialize(DConfigurationValue configSettings = null) {

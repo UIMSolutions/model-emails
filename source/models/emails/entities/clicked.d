@@ -3,7 +3,7 @@ module models.emails.entities.clicked;
 @safe:
 import models.emails;
 
-class DEMLClicked : DOOPEntity {
+class DEMLClicked : DEntity {
   mixin(EntityThis!("EMLClicked"));
   
   override void initialize(DConfigurationValue configSettings = null) {

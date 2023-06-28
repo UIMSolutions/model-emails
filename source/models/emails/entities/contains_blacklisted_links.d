@@ -3,7 +3,7 @@ module models.emails.entities.contains_blacklisted_links;
 @safe:
 import models.emails;
 
-class DEMLContainsBlacklistedLinks : DOOPEntity {
+class DEMLContainsBlacklistedLinks : DEntity {
   mixin(EntityThis!("EMLContainsBlacklistedLinks"));
   
   override void initialize(DConfigurationValue configSettings = null) {

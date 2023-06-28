@@ -3,7 +3,7 @@ module models.emails.entities.blocked;
 @safe:
 import models.emails;
 
-class DEMLBlocked : DOOPEntity {
+class DEMLBlocked : DEntity {
   mixin(EntityThis!("EMLBlocked"));
   
   override void initialize(DConfigurationValue configSettings = null) {

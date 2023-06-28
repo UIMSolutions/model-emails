@@ -4,7 +4,7 @@ module models.emails.entities.signature;
 import models.emails;
 
 // Signature for email message
-class DEMLSignature : DOOPEntity {
+class DEMLSignature : DEntity {
   mixin(EntityThis!("EMLSignature"));
   
   override void initialize(DConfigurationValue configSettings = null) {

@@ -3,7 +3,7 @@ module models.emails.entities.block_bounced;
 @safe:
 import models.emails;
 
-class DEMLBlockBounced : DOOPEntity {
+class DEMLBlockBounced : DEntity {
   mixin(EntityThis!("EMLBlockBounced"));
   
   override void initialize(DConfigurationValue configSettings = null) {

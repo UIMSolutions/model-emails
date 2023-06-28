@@ -3,7 +3,7 @@ module models.emails.entities.sending_failed;
 @safe:
 import models.emails;
 
-class DEMLSendingFailed : DOOPEntity {
+class DEMLSendingFailed : DEntity {
   mixin(EntityThis!("EMLSendingFailed"));
   
   override void initialize(DConfigurationValue configSettings = null) {

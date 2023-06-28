@@ -4,7 +4,7 @@ module models.emails.entities.email;
 import models.emails;
 
 // Group of undeleted system users and undeleted teams. Emails can be used to control access to specific objects.
-class DEMLEmail : DOOPEntity {
+class DEMLEmail : DEntity {
   mixin(EntityThis!("EMLEmail"));
   
   override void initialize(DConfigurationValue configSettings = null) {

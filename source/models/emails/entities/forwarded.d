@@ -3,7 +3,7 @@ module models.emails.entities.forwarded;
 @safe:
 import models.emails;
 
-class DEmailForwardedENtity : DOOPEntity {
+class DEmailForwardedENtity : DEntity {
   mixin(EntityThis!("EmailForwardedENtity"));
   
   override void initialize(DConfigurationValue configSettings = null) {
